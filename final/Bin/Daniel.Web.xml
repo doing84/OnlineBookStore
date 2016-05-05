@@ -1,0 +1,421 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Daniel.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Daniel.Web.UI.Controls.Designers.PagerDesigner">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.Pager">Daniel.Web.UI.Controls.Pager</see> 컨트롤의 디자이너 클래스입니다.
+            </summary>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Designers.PagerDesigner.GetDesignTimeHtml">
+            <summary>
+            디자인 타임에 보여질 HTML 코드를 가져옵니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.PageIndexChangedEventArgs">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.Pager">Daniel.Web.UI.Controls.Pager</see> 컨트롤의 PageIndexChanged 이벤트에 데이터를 제공합니다.
+            </summary>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.PageIndexChangedEventArgs.#ctor(System.Int32)">
+            <summary>
+            생성자 함수
+            </summary>
+            <param name="newPageIndex">새 페이지 인덱스</param>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.PageIndexChangedEventArgs.NewPageIndex">
+            <summary>
+            새 페이지 인덱스를 가져옵니다.
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.Resources.Controls.PagerResource">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+              속성을 재정의합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.CanNotGotoFirst">
+            <summary>
+              현재 페이지가 가장 처음 페이지입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.CanNotGotoLast">
+            <summary>
+              현재 페이지가 가장 마지막 페이지입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.CanNotGotoNext">
+            <summary>
+              현재 페이지가 가장 마지막 페이지입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.CanNotGotoNextBlock">
+            <summary>
+              현재 페이지 블록이 가장 마지막 블록입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.CanNotGotoPrevious">
+            <summary>
+              현재 페이지가 가장 처음 페이지 입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.Resources.Controls.PagerResource.CanNotGotoPreviousBlock">
+            <summary>
+              현재 페이지 블록이 가장 처음 블록입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.Pager">
+            <summary>
+            페이징 기능을 제공하는 웹 서버 컨트롤입니다.
+            </summary>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.#ctor">
+            <summary>
+            Pager 클래스의 인스턴스를 생성합니다.
+            </summary>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.Render(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            컨트롤을 렌더링 합니다.
+            </summary>
+            <param name="writer">컨트롤을 렌더링할 HtmlTextWriter 객체</param>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.OnPageIndexChanged(Daniel.Web.UI.Controls.PageIndexChangedEventArgs)">
+            <summary>
+            PageIndexChanged 이벤트를 실행합니다.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.RaisePostBackEvent(System.String)">
+            <summary>
+            포스트 백 이벤트를 발생시킵니다.
+            </summary>
+            <param name="eventArgument">포스트 백 이벤트의 파라미터</param>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            포스트 백 데이터를 가져옵니다. 이 메서드는 컨트롤 내부에서 사용됩니다.
+            </summary>
+            <param name="postDataKey">포스트 백 데이터 키</param>
+            <param name="postCollection">포스트 백 데이터 컬렉션</param>
+            <returns>포스트 백 이후 값이 변경되면 true, 그렇지 않으면 false</returns>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.RaisePostDataChangedEvent">
+            <summary>
+            포스트 백 이벤트를 발생시킵니다.
+            </summary>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.RenderFirstButton(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            네비게이션의 처음으로 버튼을 생성
+            </summary>
+            <param name="writer">HtmlTextWriter 객체</param>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.RenderPreviousButton(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            이전 버튼을 생성
+            </summary>
+            <param name="writer">HtmlTextWriter 객체</param>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.RenderNextButton(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            다음 버튼을 생성
+            </summary>
+            <param name="writer">HtmlTextWriter 객체</param>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.RenderNumericButton(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            숫자 버튼을 생성
+            </summary>
+            <param name="writer">HtmlTextWriter 객체</param>
+            <param name="pageIndex">페이지 인덱스</param>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.Pager.RenderLastButton(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            마지막 버튼을 생성
+            </summary>
+            <param name="writer">HtmlTextWriter 객체</param>
+        </member>
+        <member name="E:Daniel.Web.UI.Controls.Pager.PageIndexChanged">
+            <summary>
+            페이징 컨트롤의 현재 페이지가 변경되면 발생합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.CurrentPageIndex">
+            <summary>
+            현재 페이지의 인덱스를 지정하거나 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.Mode">
+            <summary>
+            컨트롤의 렌더링 방식을 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.HideOnSingleView">
+            <summary>
+            전체 페이지 개수가 1일 경우 페이징 컨트롤의 렌더링 여부를 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NumericButtonDelimiter">
+            <summary>
+            Mode속성이 Numeric일 경우 각 숫자 버튼 사이의 구분 문자를 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NavigateButtonDelimiter">
+            <summary>
+            Mode속성이 Numeric일 경우 각 이동 버튼 사이의 구분 문자를 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NavigateNumericButtonDelimiter">
+            <summary>
+            Mode속성이 Numeric일 경우 이동 버튼과 숫자 버튼 사이의 구분 문자를 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.SelectedNumericItemStyle">
+            <summary>
+            Mode속성이 Numeric일 경우 선택된 숫자의 스타일을 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NumericItemStyle">
+            <summary>
+            Mode속성이 Numeric일 경우 선택되지 않은 숫자의 스타일을 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NavigateButtonStyle">
+            <summary>
+            Mode속성이 Numeric일 경우 네비게이션 버튼의 스타일을 지정합니다. 이 속성은 Mode 속성이 DropDown일 경우 무시됩니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.DropDownStyle">
+            <summary>
+            Mode속성이 DropDown일 경우 드롭다운 리스트의 스타일을 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NumericButtonFormatString">
+            <summary>
+            Mode속성이 Numeric일 경우 숫자 버튼의 캡션 형식을 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.DropDownNumericFormatString">
+            <summary>
+            Mode속성이 DropDown일 경우 페이지 번호의 형식을 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.RecordCount">
+            <summary>
+            전체 레코드 개수를 지정하거나 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.PageSize">
+            <summary>
+            한 페이지 당 페이지의 개수를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.PageCount">
+            <summary>
+            전체 페이지의 개수를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NumericButtonCount">
+            <summary>
+            Mode속성이 Numeric일 경우 보여질 페이징 버튼의 개수를 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.FirstPageText">
+            <summary>
+            Mode속성이 Numeric일 경우 처음 버튼의 텍스트를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.PreviousPageText">
+            <summary>
+            Mode속성이 Numeric일 경우 이전 버튼의 텍스트를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NextPageText">
+            <summary>
+            Mode속성이 Numeric일 경우 다음 버튼의 텍스트를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.LastPageText">
+            <summary>
+            Mode속성이 Numeric일 경우 마지막 버튼의 텍스트를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.FirstPageImageUrl">
+            <summary>
+            Mode속성이 Numeric일 경우 처음 버튼의 이미지 경로를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.PreviousPageImageUrl">
+            <summary>
+            Mode속성이 Numeric일 경우 이전 버튼의 이미지 경로를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NextPageImageUrl">
+            <summary>
+            Mode속성이 Numeric일 경우 다음 버튼의 이미지 경로를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.LastPageImageUrl">
+            <summary>
+            Mode속성이 Numeric일 경우 마지막 버튼의 이미지 경로를 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.UnreachablePageBehavior">
+            <summary>
+            이동할 수 없는 페이지 버튼에 대한 행동 양식을 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.NavigateButton">
+            <summary>
+            네비게이션 버튼의 형식을 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.PrevNextButtonBehavior">
+            <summary>
+            이전, 다음 버튼의 행동 양식을 가져오거나 지정합니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.CanMoveToFirst">
+            <summary>
+            처음 페이지로 이동 가능 여부를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.CanMoveToPrevious">
+            <summary>
+            이전 페이지로 이동 가능 여부를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.CanMoveToNext">
+            <summary>
+            다음 페이지로 이동 가능 여부를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.Pager.CanMoveToLast">
+            <summary>
+            마지막 페이지로 이동 가능 여부를 가져옵니다.
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.RepeaterEx">
+            <summary>
+            DataSource가 비어있는 경우 사용될 EmptyDataTemplate 템플릿이 추가된 Repeater 컨트롤입니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.RepeaterEx._emptyDataTemplate">
+            <summary>
+            목록에 표시된 각 항목에 대해 지정된 템플릿을 반복 사용하여 레이아웃을 사용자 지정할 수 있는 데이터 바인딩된 List 컨트롤입니다
+            </summary>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.RepeaterEx.#ctor">
+            <summary>
+            RepeaterEx 클래스를 초기화 합니다.
+            </summary>
+        </member>
+        <member name="M:Daniel.Web.UI.Controls.RepeaterEx.OnDataBinding(System.EventArgs)">
+            <summary>
+            DataBinding 이벤트를 발생시킵니다.
+            </summary>
+            <param name="e">이벤트 데이터가 들어있는 <see cref="T:System.EventArgs">EventArgs</see>입니다.</param>
+        </member>
+        <member name="P:Daniel.Web.UI.Controls.RepeaterEx.EmptyDataTemplate">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.RepeaterEx">Repeater</see> 컨트롤에서 빈 항목을 표시하는 방법을 정의하는 <see cref="T:System.Web.UI.ITemplate">System.Web.UI.ITemplate</see>을 가져오거나 설정합니다. 
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.PagerMode">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.Pager">Daniel.Web.UI.Controls.Pager</see> 컨트롤의 렌더링 모드를 지정합니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.PagerMode.Numeric">
+            <summary>
+            페이지 번호를 이용한 이동이 가능한 페이징 컨트롤을 렌더링합니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.PagerMode.DropDown">
+            <summary>
+            드롭다운 형태로 이동이 가능한 페이징 컨트롤을 렌더링합니다.
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.NavigateButtons">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.Pager">Daniel.Web.UI.Controls.Pager</see> 컨트롤의 네비게이션 버튼의 형식을 지정합니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.NavigateButtons.None">
+            <summary>
+            네비게이션 버튼을 보여주지 않습니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.NavigateButtons.PrevNext">
+            <summary>
+            이전, 다음 버튼을 보여줍니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.NavigateButtons.FirstLast">
+            <summary>
+            처음, 마지막 버튼을 보여줍니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.NavigateButtons.FirstPrevNextLast">
+            <summary>
+            처음, 이전, 다음, 마지막 버튼을 보여줍니다.
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.PrevNextButtonBehaviors">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.Pager">Daniel.Web.UI.Controls.Pager</see> 컨트롤에서 이전 또는 다음 버튼을 클릭했을 때의 행동 양식을 지정합니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.PrevNextButtonBehaviors.SinglePage">
+            <summary>
+            이전 또는 다음 페이지로 이동합니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.PrevNextButtonBehaviors.PagingBlock">
+            <summary>
+            이전 또는 다음 페이징 블록으로 이동합니다.
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.UnreachablePageBehaviors">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.Pager">Daniel.Web.UI.Controls.Pager</see> 컨트롤에서 이동할 페이지가 없을 경우 행동 양식을 지정합니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.UnreachablePageBehaviors.NotSet">
+            <summary>
+            기본 동작을 수행합니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.UnreachablePageBehaviors.Hide">
+            <summary>
+            이동할 수 없는 페이징 버튼을 숨깁니다.
+            </summary>
+        </member>
+        <member name="F:Daniel.Web.UI.Controls.UnreachablePageBehaviors.ShowAlert">
+            <summary>
+            이동할 수 없는 페이징 버튼을 클릭하면 안내 메시지를 보여줍니다.
+            </summary>
+        </member>
+        <member name="T:Daniel.Web.UI.Controls.PageIndexChangedEventHandler">
+            <summary>
+            <see cref="T:Daniel.Web.UI.Controls.Pager">Daniel.Web.UI.Controls.Pager</see> 컨트롤의 PageIndexChanged 이벤트를 처리하는 메서드를 나타냅니다.
+            </summary>
+            <param name="sender">이벤트를 발생시킨 객체</param>
+            <param name="e">PageIndexChangedEventArgs 객체</param>
+        </member>
+    </members>
+</doc>

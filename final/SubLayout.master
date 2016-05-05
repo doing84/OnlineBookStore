@@ -1,0 +1,279 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainLayout.master.cs" Inherits="MainLayout" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>BookClip</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="/Css/compiled.css?v=201404281344" />
+</head>
+<body>
+ 
+
+    <header class="main">
+        <div class="wrap">
+            <a href="/Default.aspx" class="logo">
+                <img src="/images/book_clip_logo.png" alt="Book Outlet" />             
+            </a>
+            <div class="cart cart_header">
+                <a href="/Store/ShoppingCartDetails.aspx">
+                    <span class="icon">
+                        <span aria-hidden="true" class="icon-cart"></span>
+                        <span class="screen_reader_text">Cart</span>
+                    </span>
+                    <div class="units">
+                        <span class="titles optional" id="cs-titles">Total Amount:</span>
+                        <span class="price" id="cs-subtotal">$<%=String.Format("{0:0.00} ", amount) %></span>
+                    </div>
+                    
+                </a>
+            </div>
+            <nav class="aux">
+
+              <!------------------ BEGIN SUBNAV ------------------> 
+                  
+                    <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
+                    
+                        <!------------------ Before login ------------------> 
+                        <asp:View ID="loginView" runat="server">
+                        
+                           <ul>
+                                <li class="login">
+                                        <a href="/Account/Login.aspx" class="icon">
+                                            <span aria-hidden="true" class="icon-person"></span>                            
+                                            <span class="text">Login</span>
+                                            <a href="/Account/Register.aspx">Create an account &raquo;</a>
+                                        </a>
+                                </li>
+                            </ul>
+
+                        </asp:View>
+                        
+                        <!------------------ After login ------------------> 
+                        <asp:View ID="logoutView" runat="server">
+                        
+                           <ul>
+                                <li class="login">
+                                            <span aria-hidden="true" class="icon-person"></span>                            
+                                            <span class="text">Welcome! 
+                                                <asp:Label ID="userName" runat="server"></asp:Label></span>
+                                            <a id="logout" href="#" runat="server" onServerClick="btnLogout_Click">Logout</a>
+                                            <a href="/Account/Register.aspx">Modify an account &raquo;</a>
+                                </li>
+                            </ul>
+                          
+                        </asp:View>
+                    
+                    </asp:MultiView>
+                    
+                  <!------------------ END SUBNAV ------------------> 
+
+            <!------------------ END TOP NAV ------------------> 
+
+
+            </nav>
+        </div>
+    </header>
+
+
+
+    
+    
+
+<form id="form1" runat="server">
+<section class="title" id="mainCoverBg">
+
+    <div class="wrap">
+
+<table style="width:80%;">
+    <tr>
+        <td>
+        
+        </td>
+        <td style="text-align:left;">
+        
+            <nav class="main">
+                <a class="menu_button" href="#">Menu</a>
+                <ul>
+                    <li><a href="/Store/BookList.aspx?CategoryID=16">New Arrivals</a></li>
+                    <li><a href="/Store/BookList.aspx?CategoryID=17">Best sellers</a></li>
+                    <li><a href="/Store/BookList.aspx?CategoryID=18">Kids</a></li>
+                    <li><a href="/Store/BookList.aspx?CategoryID=19">Special Deals</a></li>
+                    <li><a href="/Store/BookList.aspx?CategoryID=20">Recommended Books</a></li>
+                </ul>
+
+
+            </nav>
+
+        </td>
+    </tr>
+    <tr>
+        <td style="width:20%; vertical-align: top;">
+
+            <asp:Menu ID="LeftMenu" runat="server">
+                <StaticSelectedStyle Font-Bold="true" Font-Size="Large" ForeColor="DarkMagenta" />
+                <DynamicSelectedStyle Font-Bold="true" Font-Size="Larger" ForeColor="DarkRed" BackColor="Gray" BorderColor="Gray" />
+                <DynamicHoverStyle ForeColor="DeepPink" BackColor="DimGray" />
+                <StaticHoverStyle ForeColor="DeepPink" />
+                <Items>
+                    <asp:MenuItem Text="All categories" Value="0" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=0"></asp:MenuItem>
+                    <asp:MenuItem Text="Architecture" Value="1" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=1"></asp:MenuItem>
+                    <asp:MenuItem Text="Children" Value="2" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=2"></asp:MenuItem>
+                    <asp:MenuItem Text="Communication and Journalism" Value="3" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=3"></asp:MenuItem>
+                    <asp:MenuItem Text="Computer Science" Value="4" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=4"></asp:MenuItem>
+                    <asp:MenuItem Text="Design" Value="5" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=5"></asp:MenuItem>
+                    <asp:MenuItem Text="Economics" Value="6" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=6"></asp:MenuItem>
+                    <asp:MenuItem Text="Engeneering" Value="7" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=7"></asp:MenuItem>
+                    <asp:MenuItem Text="Foreign Languages" Value="8" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=8"></asp:MenuItem>
+                    <asp:MenuItem Text="History" Value="9" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=9"></asp:MenuItem>
+                    <asp:MenuItem Text="Law" Value="11" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=11"></asp:MenuItem>
+                    <asp:MenuItem Text="Medicine" Value="12" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=12"></asp:MenuItem>
+                    <asp:MenuItem Text="Philosophy" Value="13" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=13"></asp:MenuItem>
+                    <asp:MenuItem Text="Science" Value="14" 
+                        NavigateUrl="/Store/BookList.aspx?CategoryID=14"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+
+        </td>
+        <td style="text-align:left;">
+           <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">       
+            </asp:ContentPlaceHolder>
+        </td>
+    </tr>
+</table>
+</div>
+</section>
+
+</form>
+
+    <footer>
+        <div class="wrap">
+            <a href="/" class="logo"><img src="/images/book_clip_logo.png" alt="Book Outlet" /></a>
+            <address>
+                Book Outlet <br />
+                67 Front Street North <br />
+                Thorold, ON, L2V 1X3 <br />
+                Canada                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+            </address>
+            <ul class="first">
+                <li class="title"><a href="/Store/Browse/_/N-0">Products</a></li>
+                <li><a href="/Store/Browse/new-arrivals/_/N-20">New Arrivals</a></li>
+                <li><a href="/Store/Browse/scratch-dent/_/N-3320">Scratch/Dent</a></li>
+                <li><a href="/Store/Browse/tweens-young-adult/_/N-3656">Tweens/YA</a></li>
+                <li><a href="/Store/Browse/kids/_/N-3294">Kids</a></li>
+                <li><a href="/Store/FiftyFifty">50/50</a></li>
+                <li><a href="/Store/Categories">Categories</a></li>
+                <li><a href="/Store/OtherBrowsing">Other</a></li>
+            </ul>
+            <ul class="second">
+                <li class="title"><a href="/Help">Help</a></li>
+                <li><a href="/Help/Faqs#PlaceOrder">Ordering</a></li>
+                <li><a href="/Help/Shipping">Shipping</a></li>
+                <li><a href="/Help/AboutUs#OurProduct">Our Product</a></li>
+                <li><a href="/Tickets/Create">Customer Service</a></li>
+                <li><a href="/Help/OurLocation">Contact Us</a></li>
+                <li><a href="/Newsletter/Subscribe">Subscribe To Newsletter</a></li>
+                <li><a href="/Retail">Retail Store Information</a></li>
+                <li><!-- BoldChat Live Chat Button HTML v4.00 (Type=HTML,ChatWindow=My Chat Window,Department=- None -,Website=BookOutlet.com -->
+<a class="icon" href="https://livechat.boldchat.com/aid/422135137631992176/bc.chat?resize=true&amp;cwdid=418381770886242287&amp;wdid=737062655151682738&amp;vr=&amp;vn=&amp;vi=&amp;ve=&amp;vp=&amp;iq=&amp;curl=" target="_blank" onclick="window.open((window.pageViewer &amp;&amp; pageViewer.link || function(link){return link;})(this.href + (this.href.indexOf('?')>=0 ? '&amp;' : '?') + 'url=' + escape(document.location.href)), 'Chat367233609785093432', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=640,height=480');return false;">
+   
+    <noscript>Live Chat</noscript>
+</a>
+<!-- /BoldChat Live Chat Button HTML v4.00 --></li>
+            </ul>
+            <ul class="third">
+                <li class="title"><a href="/Account">My Account</a></li>
+                <li><a href="/Orders/PastOrders">Past Orders</a></li>
+                <li><a href="/Account/Details">Edit Profile</a></li>
+                <li><a href="/Wishlist">Wishlist</a></li>
+                <li><a href="/Account/Register">Create New Account</a></li>
+            </ul>
+            <ul class="fourth">
+                <li>
+                    <a href="https://sealserver.trustkeeper.net/compliance/cert.php?code=x4irdzlmFVRIpWYHKIMpiFWOpDGWgo">
+                        <img src="https://sealserver.trustkeeper.net/compliance/seal.php?code=x4irdzlmFVRIpWYHKIMpiFWOpDGWgo" alt="Trustwave Trusted Commerce">
+                    </a>
+                </li>
+                <li>
+                    <br />
+                    <span class="siteseal">
+                        <script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=gGLUrmuGMeqgcRw1Swo93T9qmziTSLeOdvvlkp1Twv36JYzzidKAqVxrX"></script>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+  
+    <noscript>
+    <a href="http://www.boldchat.com" title="Live Chat Software" target="_blank"><img alt="Live Chat Software" src="https://vms.boldchat.com/aid/422135137631992176/bc.vmi?&amp;wdid=737062655151682738&amp;vr=&amp;vn=&amp;vi=&amp;ve=&amp;vp=&amp;iq=&amp;curl=" border="0" width="1" height="1" /></a>
+    </noscript>
+ 
+
+<a id="popupLauncher" href="#subscribePopup" style="display:none;"></a>
+
+<div id="subscribePopup" style="display:none;">
+	
+    <div id="popup-header">
+        
+        <div id="popup-message">
+            <h2 style="color:#111" class="subscribe-message">GET YOUR READ ON!</h2>
+            
+                <h2>Subscribe To Our Newsletter</h2>
+                <p style="color: #d32c3a;">
+                    <span class="subscribe-message">Our free Bargain Bulletin Newsletter is distributed regularly.</span><br />
+                    Sign up now to receive notice of promotions and other exciting Book Outlet news and a chance to win a <strong>$50 Book Outlet</strong> gift card.
+                </p>
+            
+        </div>
+    </div>
+    <div id="popup-form">
+        
+
+            <div class="clearfix">
+                <div id="form-left">
+                    <label for="">Email Address</label>
+                    <input type="email" id="Email_1" name="Email" placeholder="Email Address" maxlength="100" required="yes" />
+
+                    <input type="hidden" name="SubAction" value="sub_add_update" />
+                </div>
+            </div>
+                        
+            <div class="clearfix">
+                <input type="checkbox" id="checkbox-1-1" class="regular-checkbox" /><label for="checkbox-1-1"></label>
+                <div class="tag">I agree to the terms below*</div>
+                <br />
+            </div>
+            
+            <button type="submit" class="button button_small">Subscribe</button>
+
+            <label>
+                <p>
+                <br />
+                    *I would like to receive marketing messages from Book Outlet that may include email, direct mail, or individual communications. <br />
+                    I consent that Book Outlet stores, processes and transfers my data and will never share or sell my data.<br />
+                    I understand that I can unsubscribe at any time. <a href="/Help/PrivacyAndSecurity">Read our Privacy Policy</a>.
+                </p>                
+            </label>
+
+    </div>
+</div>
+
+
+</body>
+</html>
